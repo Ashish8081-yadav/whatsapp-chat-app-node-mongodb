@@ -31,3 +31,16 @@ A **WhatsApp-style chat application** built using **Node.js, Express.js, MongoDB
 
 ## 📂 Project Structure
 
+whatsapp-chat-app/
+│
+├── models/
+│ └── chat.js # MongoDB schema for chat messages
+├── public/ # Static assets (CSS, JS)
+├── views/
+│ ├── index.ejs # List all chats
+│ ├── new.ejs # Form to create new chat
+│ ├── edit.ejs # Form to edit chat
+│ └── confirm.ejs # Delete confirmation page
+├── app.js # Main Express app
+└── package.json # Project dependencies
+
