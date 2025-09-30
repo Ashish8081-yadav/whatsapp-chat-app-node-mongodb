@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #d7e1ec 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            padding: 30px 40px;
+            width: 450px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background-color: #f0f4f8;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .info p {
+            margin: 6px 0;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            resize: vertical;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            background-color: #3498db;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <p> Edit your chat : <%=chat._id %></p>
+    <p> this chat was send from <%=chat.from %> to <%=chat.to %></p>
+    <form method="post" action="/chats/<%= chat._id %>?_method=PUT">
+
+        <textarea name="msg" rows="10" cols="10">
+            <%=chat.msg %>       
+        </textarea>
+        <br>
+            <button>edit</button>
+    </form>
+
+    
+</body>
+</html>

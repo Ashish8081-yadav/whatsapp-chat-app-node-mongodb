@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write new Chat</title>
+
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 400px;
+    text-align: center;
+  }
+
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input[type="text"]:focus, textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    outline: none;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+
+  form > * {
+    display: block;
+    margin: 10px 0;
+  }
+
+</style>
+
+
+</head>
+<body>
+    <h3> write new chat </h3>
+    <form method="post" action="/chats">
+        <input  placeholder="who are you" type="text" name="from" >
+        <br>
+        <br>
+        <textarea name="msg" id=""> wrtite your msg hrere </textarea>
+        <br>
+        <br>
+        <input placeholder=" add receiver " type="text" name="to">
+        <br><br>
+        <button>Create Chats</button>
+    </form>
+    
+</body>
+</html>

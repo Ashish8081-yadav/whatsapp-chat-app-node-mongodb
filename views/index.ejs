@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp </title>
+   <link rel="stylesheet" href="style.css">
+
+
+<style>
+    /* General body styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h3 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 25px;
+    }
+
+    form[action="/chats/New"] button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-bottom: 20px;
+    }
+
+    form[action="/chats/New"] button:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+    }
+
+    /* Chat card */
+    .chat {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chat:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .chat p {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .msg {
+        background-color: #f7f9fc;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    .msg p {
+        margin: 0;
+        font-size: 15px;
+        color: #34495e;
+    }
+
+    /* Edit button */
+    .msg form button {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .msg form button:hover {
+        background-color: #1e8449;
+        transform: scale(1.05);
+    }
+
+    /* Delete link */
+    .msg a {
+        display: inline-block;
+        margin-left: 10px;
+        background-color: #e74c3c;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .msg a:hover {
+        background-color: #c0392b;
+        transform: scale(1.05);
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #dcdcdc;
+        margin: 15px 0;
+    }
+</style>
+
+
+
+</head>
+<body>
+
+    <h3> All Chats </h3>
+
+
+
+    <form method="get" action="/chats/New">
+      <button>New Chat</button>
+
+    </form>
+    <br>
+
+
+
+
+  <%   for (let chat of chats ){   %>
+    <div class="chat">
+         <p>from :<%= chat.from %></p>
+         
+         <div class="msg">
+          <p><%= chat.msg %></p>
+          <form method="get"  action="/chats/<%=chat._id %>/edit" >
+            <button> Edit</button>
+          </form>
+          <br>
+        
+
+<!-- <form method="post"  action="/chats/<%=chat._id %>?_method=DELETE" >
+            <button> Delete</button>
+          </form> -->
+
+
+
+          <a href="/chats/<%= chat._id %>/confirm-delete">Delete</a>
+
+
+        </div>
+         
+        
+         <p>Recived:<%= chat.to%></p>
+         <hr>
+         <p><%=chat.created_at.toString().split(" ").slice(0,4) %></p>
+         
+    </div>
+    <% }%>
+    
+</body>
+</html>
+

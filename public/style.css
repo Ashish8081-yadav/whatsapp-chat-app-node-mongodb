@@ -1,0 +1,52 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading */
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Chat container */
+.chat {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* From / To text */
+.chat p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Message bubble */
+.msg {
+    background-color: #dcf8c6; /* light green like WhatsApp */
+    padding: 10px 15px;
+    border-radius: 15px;
+    display: inline-block;
+    max-width: 70%;
+    margin: 5px 0;
+    font-size: 15px;
+    color: #000;
+}
+
+/* Horizontal line between chats */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0 0 0;
+}
+
+
+
